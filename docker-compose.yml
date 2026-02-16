@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    container_name: fms-vue-app
+    volumes:
+      - /var/www/fms-vue:/app:Z        # your project source
+      - /app/node_modules               # anonymous volume for node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
+    command: npm run serve
