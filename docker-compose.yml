@@ -3,7 +3,8 @@ services:
     build: .
     container_name: fms-vue-app
     volumes:
-      - /var/www/fms-vue:/app:Z        # your project source
+      # - /var/www/fms-vue:/app:Z        # your project source
+      - .:/app                          # your project source
       - /app/node_modules               # anonymous volume for node_modules
     ports:
       - "5173:5173"
